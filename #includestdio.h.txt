@@ -1,0 +1,23 @@
+#include<stdio.h>
+int factorial(int n){
+int fact = 1;
+for(int i = 1;i<=n;i++){
+fact *= i;}
+return fact;}
+int combination(int n,int r){
+  return factorial(n)/(factorial(r)*factorial(n-r));}
+float probability(int n,int r){
+  int totalSets = combination(n, r);
+  float probability = (float)1 / totalSets;
+  return probability;}
+int main(){
+  int n,r;
+  printf(" ");
+  scanf("%d",&n);
+  printf(" ");
+  scanf("%d", &r);
+  if(n>=r){
+    float prob = probability(n, r);
+    printf(" probability:%.6f",r,n,prob);}
+  else{ printf("");}
+  return 0;}
